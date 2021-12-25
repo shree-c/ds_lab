@@ -31,7 +31,6 @@ void dequeue() {
 	return;
 }
 void display() {
-	printf("%d, %d\n", fend, rend);
 	if (fend == -1) {
 		printf("queuen empty\n");
 		return;
