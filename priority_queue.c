@@ -38,7 +38,6 @@ node *push(node *start, int val, int pri)
     if (start->priority < pri)
     {
         start = newNode(val, pri, start);
-        printf("came here\n");
         return start;
     }
     node *temp = start;
