@@ -46,14 +46,7 @@ node *push(node *start, int val, int pri)
     {
         temp = temp->next;
     }
-    if (temp->next == NULL)
-    {
-        temp->next = newNode(val, pri, NULL);
-    }
-    else
-    {
-        temp->next = newNode(val, pri, temp->next);
-    }
+    temp->next = newNode(val, pri, temp->next);
     return start;
 }
 node *pop(node *start)
