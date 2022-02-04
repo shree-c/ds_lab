@@ -2,8 +2,8 @@
 
 sudo apt install git
 
-git clone https://github.com/shree-c/ds_lab ~/tes
+git clone https://github.com/shree-c/ds_lab ~/ds
 
-cd tes
+cd ds
 
 make
