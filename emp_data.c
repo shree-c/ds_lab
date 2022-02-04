@@ -24,9 +24,6 @@ int main() {
         scanf("%d", &arr[i].da);
     }
     FILE *fil_ref = fopen("emp_report", "w");
-    if (fil_ref == NULL) {
-        
-    }
     fprintf(fil_ref, "%5s  %6s  %20s  %7s  %-7s  %-10s\n", "sl.no", "emp_no", "emp_name", "bas_sal", "da", "total_sal");
     fprintf(fil_ref, "--------------------------------------------------------------\n");
     for (int i = 0; i < n; i++) {
