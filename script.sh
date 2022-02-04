@@ -1,4 +1,17 @@
 #!/bin/bash
+if !command wget &> /dev/null
+then
+	if command apt &> /dev/null
+	then
+		sudo apt install wget
+	elif command pacman &> /dev/null
+	then
+		sudo pacman -S wget
+	elif command pkg &> /dev/null
+	then
+		pkg install wget
+	fi
+fi
 wget -q --spider http://google.com
 if [ $? -ne 0 ]; then
     echo "!!!! no internet"
