@@ -18,8 +18,8 @@ all:
 	cc quicksort.c -o quicksort.bin
 	cc stack.c -o stack.bin
 	cc stringlen.c -o stringlen.bin
-	cc ./easy_infix_to_prefix.c -o easy_inf_pre
-	cc ./easy_infix_to_postfix.c -o easy_inf_pos
+	cc ./easy_infix_to_prefix.c -o easy_inf_pre.bin
+	cc ./easy_infix_to_postfix.c -o easy_inf_pos.bin
 
 clean:
 	rm *.bin

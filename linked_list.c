@@ -12,6 +12,25 @@ node *newNode(int data, node *next) {
     return hold;
 }
 
+void search(node *start, int item) {
+    if (start == NULL) {
+        printf("list empty\n");
+        return;
+    }
+    int i = 0, found = 0;
+    while (start != NULL) {
+        if (start->data == item) {
+            printf("item found at location %d\n", i + 1);
+            found = 1;
+        }
+        start = start->next;
+        i++;
+    }
+    if (!found) {
+        printf("item not found\n");
+    }
+}
+
 void printLlist(node *start) {
     if (start == NULL) {
         printf("list empty\n");
@@ -46,7 +65,7 @@ node *add_front(node *start, int val) {
 }
 node *remove_front(node *start) {
     if (start == NULL) {
-        printf("list empty");
+        printf("list empty\n");
     } else {
         node *hold = start;
         printf("%d removed\n", hold->data);
@@ -57,7 +76,7 @@ node *remove_front(node *start) {
 }
 node *remove_back(node *start) {
     if (start == NULL) {
-        printf("list empty");
+        printf("list empty\n");
     } else {
         node *hold = start;
         if (hold->next == NULL) {
@@ -78,7 +97,7 @@ int main() {
 	int opt = 0;
     node *start = NULL;
 	do {
-		printf("1. add_front\n2. add_back\n3. remove_front\n4. remove_back\n5. display\n6. exit\n:: ");
+		printf("1. add_front\n2. add_back\n3. remove_front\n4. remove_back\n5. display\n6. search\n7. exit\n:: ");
 		scanf("%d", &opt);
 		switch(opt) {
 			case 1: {
@@ -89,6 +108,7 @@ int main() {
 				break;
             }
 			case 2: {
+				printf("Enter a value: ");
 				int val;
 				scanf("%d", &val);
                 start = add_back(start, val);
@@ -103,13 +123,20 @@ int main() {
             case 5:
 				printLlist(start);
 				break;
-            case 6:
+            case 6: {
+                        printf("enter item to search: ");
+                        int item;
+                        scanf("%d", &item);
+                        search(start, item);
+                        break;
+                    }
+            case 7:
                 printf("byee\n");
                 break;
             default:
                 printf("invalid option\n");
                 break;
 		}
-	} while (opt != 6);
+	} while (opt != 7);
 	return 0;
 }
