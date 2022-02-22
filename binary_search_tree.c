@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#define SPC 10
 typedef struct node {
 	int data;
 	struct node *left;
@@ -27,12 +27,14 @@ node *insert(node *root, int data) {
 void display(node *root, int level) {
 	if (root == NULL)
 		return;
+    level += SPC;
 	display(root->right, level + 1);
-	for (int i = 0; i < level; i++)
+    putchar('\n');
+	for (int i = 0; i < level; i++) {
 		putchar(' ');
+    }
 	printf("%d\n", root->data);
 	display(root->left, level + 1);
-	putchar('\n');
 }
 
 int main() {

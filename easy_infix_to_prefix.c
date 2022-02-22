@@ -6,7 +6,7 @@
 /* algorithm:
  * reverse the expression
  * replace '(' with ')' and vice versa
- * call infix to postfix
+ * call infix to postfix (minor change when '^' comes: use normal >= when '^' else use >
  * reverse what you get
  * output it
  */
